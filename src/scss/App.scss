@@ -1,0 +1,133 @@
+
+body, html, #root {
+  margin:0;
+  padding:0;
+  width:100%;
+  height:100%;
+  position:relative;
+  font-family:Verdana, Geneva, sans-serif;
+  background:#444;
+}
+
+.frame{
+  width:100%;
+  height:calc(100% - 20px);
+  position: relative;
+}
+
+.footer{
+  position:absolute;
+  bottom:0;
+  left:0;
+  right:0;
+  height:20px;
+  background: #444;
+  color:#fff;
+  opacity: 0.6;
+}
+
+video, canvas {
+  width: 100%;
+  height: auto;
+  background-color: transparent;
+  position: absolute;
+  left: 0;
+}
+.motionbar{
+  height:100%;
+}
+
+canvas {
+  image-rendering: auto;
+}
+
+.last-motion-box{
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  background: #444;
+  color: #fff;
+  text-align: center;
+  padding: 5px 10px;
+  border-top-left-radius: 5px;
+  opacity: 0.6;
+}
+.last-motion-box .title{
+  font-size:12px;
+  color:#ccc;
+  width:100%;
+}
+.last-motion-box .number{
+  font-size:18px;
+  color:#fff;
+  width:100%;
+}
+.last-motion-box .bottom{
+  font-size:12px;
+  color:#ccc;
+  width:100%;
+}
+
+.threshold{
+  height:100%;
+  position:absolute;
+  top:0;
+  left:0;
+  width:1px;
+  background:#000;
+  opacity:0.5;
+}
+
+.settings{
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  width: 35px;
+  height: 35px;
+}
+.settings.opened{
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  width: 50%;
+  height: calc(100% - 40px);
+  background:#eee;
+  border-radius: 5px;
+  overflow:hidden;
+  color:#444;
+}
+.settings .settings-head, .settings .settings-box{
+  display:none;
+}
+
+.settings.opened .settings-head, .settings.opened .settings-box{
+  display:block;
+}
+.settings-btn{
+  cursor: pointer;
+  width:25px;
+  height:25px;
+  position: absolute;
+  top:5px;
+  right:5px;
+}
+
+.settings-head{
+  background:#ccc;
+  border-bottom:1px solid #c0c0c0;
+  color:#000;
+  text-align:center;
+  height:35px;
+  width:100%;
+  font-size:20px;
+  line-height:35px;
+}
+.settings-box{
+  position:absolute;
+  top:35px;
+  bottom:0;
+  right:0;
+  left:0;
+  overflow:auto;
+  padding:10px;
+}
