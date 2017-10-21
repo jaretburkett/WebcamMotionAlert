@@ -3,6 +3,7 @@ const electron = require('electron');
 const app = electron.app;
 // Module to create native browser window.
 const BrowserWindow = electron.BrowserWindow;
+const nativeImage = require('electron').nativeImage
 
 const path = require('path');
 const url = require('url');
@@ -10,6 +11,7 @@ const url = require('url');
 // Keep a global reference of the window object, if you don't, the window will
 // be closed automatically when the JavaScript object is garbage collected.
 let mainWindow;
+const iconPath = path.join(__dirname, 'dist/icon.png');
 
 require('electron-context-menu')({
 });
@@ -19,9 +21,9 @@ function createWindow () {
     mainWindow = new BrowserWindow({
         width: 800,
         height: 600,
-        icon: path.join(__dirname, 'dist/logo.png'),
+        icon: iconPath,
+        backgroundColor: '#444444',
         show: false
-
     });
 
     // and load the index.html of the app.
@@ -34,6 +36,12 @@ function createWindow () {
     mainWindow.webContents.on('did-finish-load', function() {
         mainWindow.show();
     });
+
+    // set apple icon
+    if (process.platform === 'darwin') {
+        app.dock.setIcon(iconPath);
+    }
+    mainWindow.setMenu(null);
 
     // Open the DevTools.
     // mainWindow.webContents.openDevTools();

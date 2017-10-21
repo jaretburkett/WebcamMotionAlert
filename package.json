@@ -11,7 +11,7 @@
   "license": "ISC",
   "dependencies": {
     "electron-context-menu": "^0.9.1",
-    "electron-json-storage": "^3.0.7"
+    "electron-json-storage-sync": "^1.1.0"
   },
   "devDependencies": {
     "babel-core": "^6.26.0",
@@ -22,6 +22,7 @@
     "babel-preset-es2015-script": "^1.1.0",
     "babel-preset-react": "^6.24.1",
     "babel-preset-react-hmre": "^1.1.1",
+    "bootstrap": "^4.0.0-beta.2",
     "commonjs": "0.0.1",
     "concurrently": "^3.5.0",
     "css-loader": "^0.28.7",
@@ -34,6 +35,7 @@
     "mobx": "^3.2.2",
     "mobx-react": "^4.2.2",
     "node-sass": "^4.5.3",
+    "pushover-notifications": "^0.2.4",
     "react": "^15.0.1",
     "react-dom": "^15.0.1",
     "react-router-dom": "^4.2.2",

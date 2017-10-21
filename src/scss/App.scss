@@ -1,4 +1,6 @@
 
+@import '../../node_modules/bootstrap/scss/bootstrap';
+
 body, html, #root {
   margin:0;
   padding:0;
@@ -130,4 +132,5 @@ canvas {
   left:0;
   overflow:auto;
   padding:10px;
+  font-size: 12px;
 }

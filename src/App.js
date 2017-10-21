@@ -1,6 +1,7 @@
 import {observer} from 'mobx-react';
 import React, {Component} from 'react';
 import {init, start} from './tools/DiffCamEngine';
+import SendNotification from './tools/SendNotification';
 import './scss/App.scss';
 import Settings from "./components/Settings";
 
@@ -39,7 +40,13 @@ class App extends Component {
             score: payload.score
         });
 
+        // check if we have motion
         if(payload.score > this.props.store.motionThreshold){
+            // check if we have new motion
+            if(this.state.secondsSinceLastMotion > this.props.store.triggerTime) {
+                // new motion
+                SendNotification.motionOn(this.props.store);
+            }
             this.setState({
                secondsSinceLastMotion:0
             });
@@ -48,10 +55,14 @@ class App extends Component {
 
     // called every second
     tickSecond(){
-        const lastSecond = this.state.secondsSinceLastMotion;
+        const setSecond = this.state.secondsSinceLastMotion + 1;
         this.setState({
-            secondsSinceLastMotion:lastSecond + 1
-        })
+            secondsSinceLastMotion:setSecond
+        });
+        if(setSecond === this.props.store.triggerTime){
+            // motion has stopped
+            SendNotification.motionOff(this.props.store);
+        }
     }
 
     componentDidMount() {
