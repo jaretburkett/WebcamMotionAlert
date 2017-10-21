@@ -15,6 +15,7 @@ class Settings extends Component {
             notificationType: this.props.store.notificationType,
             pushBulletApiKey: this.props.store.pushBulletApiKey,
             pushOverApiKey: this.props.store.pushOverApiKey,
+            pushOverAppKey: this.props.store.pushOverAppKey,
             motionThreshold: this.props.store.motionThreshold
         };
 
