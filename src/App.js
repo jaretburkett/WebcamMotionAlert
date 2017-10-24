@@ -108,8 +108,10 @@ class App extends Component {
         return (
             <div style={{height:'100%'}}>
                 <div className="frame">
-                    <video id="video"></video>
-                    <canvas id="motion"></canvas>
+                    <div className="box">
+                        <video id="video"></video>
+                        <canvas id="motion"></canvas>
+                    </div>
                     <div className="last-motion-box">
                         <div className="title">
                             Last Motion

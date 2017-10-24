@@ -4,3 +4,4 @@ dist/*
 !dist/index.html
 !dist/icon.png
 /build/release
+npm-debug.log
